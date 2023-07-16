@@ -42,10 +42,10 @@ app.post("/compose", function (req, res) {
 });
 
 app.get("/posts/:postBlog", function (req, res) {
-  const requestedTitle = _.lowercase(req.params.postBlog);
+  const requestedTitle = _.lowerCase(req.params.postBlog);
 
   posts.forEach(function (post) {
-    const storedTitle = _.lowercase(post.title);
+    const storedTitle = _.lowerCase(post.title);
 
     if (storedTitle === requestedTitle) {
       res.render("post", {
